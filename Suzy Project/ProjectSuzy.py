@@ -37,6 +37,9 @@ with sr.Microphone() as source:
 		if text == "กี่โมงแล้ว":
 			now = datetime.now() 
 			text = now.strftime("ขณะนี้เวลา%Hนาฬิกา%Mนาที%Sวินาที")
+		if text == "วันนี้วันที่":
+			now = datetime.now()
+			text = now.strftime("%x")
 		if text == "อากาศเป็นไงบ้าง":
 			text = weather()
 		if text == "อุณหภูมิวันนี้":
