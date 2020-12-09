@@ -84,7 +84,7 @@ with sr.Microphone() as source:
 		if text == "วันนี้วันที่":
 			now = datetime.now()
 			text = now.strftime("%x")
-		if text == "อากาศเป็นไงบ้าง":
+		if text == "สภาพอากาศวันนี้":
 			text = weather()
 		if text == "อุณหภูมิวันนี้":
 			text = temp()
