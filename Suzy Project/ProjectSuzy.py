@@ -16,11 +16,10 @@ def weather():
 	return format_add_w
 
 def temp():
-	url_t = 'http://api.openweathermap.org/data/2.5/weather?appid=0c42f7f6b53b244c78a418f4f181282a&q=Bangkok'
+	url_t = 'http://api.openweathermap.org/data/2.5/weather?appid=0c42f7f6b53b244c78a418f4f181282a&q=Bangkok&units=metric'
 	json_data_t = requests.get(url_t).json()
 	format_add_t = json_data_t['main'][0]["temp"]
-	tempurature = (format_add_t-32)/1.8000
-	return tempurature
+	return format_add_t
 
 with sr.Microphone() as source: 
 	playsound("./signal.mp3") 
