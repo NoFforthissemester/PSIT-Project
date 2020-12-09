@@ -1,11 +1,15 @@
 import speech_recognition as sr
 import requests
+import webbrowser
 from gtts import gTTS 
 from playsound import playsound 
 from datetime import datetime 
 
 
 r = sr.Recognizer()
+
+def openurl():
+	webbrowser.open('www.it.kmitl.ac.th', new=2)
 
 def weather():
 	url_w = 'http://api.openweathermap.org/data/2.5/weather?appid=0c42f7f6b53b244c78a418f4f181282a&q=Bangkok'
@@ -88,6 +92,8 @@ with sr.Microphone() as source:
 			text = weather()
 		if text == "อุณหภูมิวันนี้":
 			text = main()
+		if text == "เปิดเว็บ":
+			openurl()
 
 	except:
 		text = "ขอโทษค่ะ ฉันไม่เข้าใจในสิ่งที่คุณพูด"
