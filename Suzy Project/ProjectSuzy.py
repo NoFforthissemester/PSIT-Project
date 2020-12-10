@@ -1,6 +1,7 @@
 import speech_recognition as sr
 import requests
 import webbrowser
+impotrt random
 from gtts import gTTS 
 from playsound import playsound 
 from datetime import datetime 
@@ -96,7 +97,8 @@ with sr.Microphone() as source:
 			openurl()
 
 	except:
-		text = "ขอโทษค่ะ ฉันไม่เข้าใจในสิ่งที่คุณพูด"
+		mess_list_1 = ['ขอโทษค่ะ ฉันไม่เข้าใจในสิ่งที่คุณพูด', 'ฉันไม่สามารถเข้าใจสิ่งที่คุณพูดได้ค่ะ', 'ไม่เข้าใจค่ะ']
+		text = random.choice(mess_list_1)
 	tts = gTTS(text, lang="th") 
 	tts.save("./answer.mp3") 
 	playsound("./answer.mp3")
