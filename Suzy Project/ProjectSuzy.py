@@ -14,7 +14,7 @@ def openyoutube():
 def openmusic():
 	webbrowser.open('www.spotify.com', new=2)
 def openmaps():
-	webbrowser.open('maps.google.co.th', new=2)
+	webbrowser.open('https://www.google.co.th/maps', new=2)
 	
 
 def weather():
