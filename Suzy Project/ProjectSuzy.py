@@ -1,7 +1,7 @@
 import speech_recognition as sr
 import requests
 import webbrowser
-impotrt random
+import random
 from gtts import gTTS 
 from playsound import playsound 
 from datetime import datetime 
