@@ -90,7 +90,7 @@ with sr.Microphone() as source:
 			text = now.strftime("%x")
 		if text == "สภาพอากาศวันนี้":
 			text = weather()
-		if text == "อุณหภูมิวันนี้":
+		if text == "อุณหภูมิตอนนี้":
 			text = temperature()
 		if text == "เปิดเว็บ":
 			openurl()
