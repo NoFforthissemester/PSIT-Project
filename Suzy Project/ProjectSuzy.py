@@ -9,8 +9,8 @@ from datetime import datetime
 
 r = sr.Recognizer()
 
-def openurl():
-	webbrowser.open('www.it.kmitl.ac.th', new=2)
+def openyoutube():
+	webbrowser.open('www.youtube.com', new=2)
 def openmusic():
 	webbrowser.open('www.spotify.com', new=2)
 
@@ -96,7 +96,7 @@ with sr.Microphone() as source:
 		if text == "อุณหภูมิตอนนี้":
 			text = temperature()
 		if text == "เปิดเว็บ":
-			openurl()
+			openyoutube()
 		if text == "เปิดเพลง":
 			openmusic()
 
