@@ -63,11 +63,11 @@ def weather():
 	report_weather = dic_th.get(check_cast)
 	return report_weather
 
-def main():
+def temperature():
     api_address='http://api.openweathermap.org/data/2.5/weather?q=Bangkok&appid=9486b253fad80b593ccee78727b6e327&units=metric'
     json_data = requests.get(api_address).json()
-    temperature = json_data['main']['temp']
-    return ("%.2f Celcius" % temperature)
+    temp = json_data['main']['temp']
+    return ("%.2f Celcius" % temp)
 
 with sr.Microphone() as source: 
 	playsound("./signal.mp3") 
@@ -91,7 +91,7 @@ with sr.Microphone() as source:
 		if text == "สภาพอากาศวันนี้":
 			text = weather()
 		if text == "อุณหภูมิวันนี้":
-			text = main()
+			text = temperature()
 		if text == "เปิดเว็บ":
 			openurl()
 
