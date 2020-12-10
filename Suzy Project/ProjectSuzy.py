@@ -88,13 +88,13 @@ with sr.Microphone() as source:
 			text = text.replace("ผม", "ฉันเองก็")
 		if "ครับ" in text:
 			text = text.replace("ครับ", "ค่ะ")
-		if text == "กี่โมงแล้ว":
+		if text == "กี่โมงแล้ว" or text == "กี่โมง":
 			now = datetime.now() 
 			text = now.strftime("ขณะนี้เวลา%Hนาฬิกา%Mนาที%Sวินาที")
-		if text == "วันนี้วันที่":
+		if text == "วันนี้วันที่" or text == "วันนี้วันที่เท่าไหร่":
 			now = datetime.now()
 			text = now.strftime("%x")
-		if text == "สภาพอากาศวันนี้":
+		if text == "สภาพอากาศวันนี้" or text == "อากาศเป็นไงบ้าง":
 			text = weather()
 		if text == "อุณหภูมิตอนนี้":
 			text = temperature()
