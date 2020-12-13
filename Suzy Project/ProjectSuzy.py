@@ -93,7 +93,22 @@ with sr.Microphone() as source:
 			text = now.strftime("ขณะนี้เวลา%Hนาฬิกา%Mนาที%Sวินาที")
 		if text == "วันนี้วันที่" or text == "วันนี้วันที่เท่าไหร่":
 			now = datetime.now()
-			text = now.strftime("%x")
+			check_month = now.strftime("%B")
+			dic_month = {'January':'มกราคม',\
+						'February':'กุมภาพันธ์',\
+						'March':'มีนาคม',\
+						'April':'เมษายน',\
+						'May':'พฤษภาคม',\
+						'June':'มิถุนายน',\
+						'July':'กรกฎาคม',\
+						'August':'สิงหาคม',\
+						'September':'กันยายน',\
+						'October':'ตุลาคม',\
+						'November':'พฤศจิกายน',\
+						'December':'ธันวาคม',\
+						}
+			month = dic_month.get(check_month)
+			text = now.strftime("%d")+month+("ปี")+(now.strftime("%Y"))
 		if text == "สภาพอากาศวันนี้" or text == "อากาศเป็นไงบ้าง":
 			text = weather()
 		if text == "อุณหภูมิตอนนี้":
